@@ -1,12 +1,5 @@
 import styled from '@emotion/styled';
 
-export const FriendSection = styled.section`
-  width: 100%;
-  margin: auto;
-  background-color: #e7ecf2;
-  padding: 30px 0;
-`;
-
 export const FriendListStyled = styled.ul`
   display: flex;
   flex-direction: column;
@@ -26,8 +19,14 @@ export const FriendItem = styled.li`
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
-    &:not(:last-child) {
-  margin-bottom: 16px;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-weight: 500;
+    color: #4e5b64;
+  }
 `;
 
 export const FriendStatus = styled.span`
