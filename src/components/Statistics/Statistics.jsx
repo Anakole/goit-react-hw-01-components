@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import { getRandomHexColor } from './RandomColor';
+import { Section } from 'components/App/App.styled';
 import {
   StatisticsStyle,
   StatisticsTitleStyle,
@@ -7,8 +9,6 @@ import {
   StatiscicsLabel,
   StatiscicsPercentage,
 } from './Statistics.styled';
-
-import { Section } from 'components/App/App.styled';
 
 export default function Statistics({ title, stats }) {
   return (
@@ -37,3 +37,17 @@ function StatisticsItems({ stats }) {
     </StatiscicsList>
   );
 }
+
+StatisticsItems.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
+};
+
+StatisticsTitle.propTypes = {
+  title: PropTypes.string,
+};
