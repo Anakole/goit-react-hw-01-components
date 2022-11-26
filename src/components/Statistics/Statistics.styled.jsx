@@ -1,15 +1,10 @@
 import styled from '@emotion/styled';
 
-export const StatisticsStyle = styled.section`
-  width: 100%;
-  background-color: #f0f3f7;
-  padding: 30px 0;
-  div {
-    margin: auto;
-    background-color: #fff;
-    width: 350px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
+export const StatisticsStyle = styled.div`
+  margin: auto;
+  background-color: #fff;
+  width: 350px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 
 export const StatisticsTitleStyle = styled.h2`
