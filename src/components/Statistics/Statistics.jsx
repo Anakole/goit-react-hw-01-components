@@ -8,14 +8,16 @@ import {
   StatiscicsPercentage,
 } from './Statistics.styled';
 
+import { Section } from 'components/App/App.styled';
+
 export default function Statistics({ title, stats }) {
   return (
-    <StatisticsStyle>
-      <div>
+    <Section>
+      <StatisticsStyle>
         {title && <StatisticsTitle title={title} />}
         <StatisticsItems stats={stats} />
-      </div>
-    </StatisticsStyle>
+      </StatisticsStyle>
+    </Section>
   );
 }
 
