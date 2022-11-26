@@ -13,7 +13,7 @@ export const TransactionTable = styled.table`
     padding: 8px;
   }
 
-  tr:nth-child(even) {
+  tr:nth-of-type(2n) {
     background-color: #f3f6f9;
   }
 
