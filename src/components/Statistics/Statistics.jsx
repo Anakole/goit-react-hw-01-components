@@ -1,25 +1,37 @@
+import { getRandomHexColor } from './RandomColor';
+import {
+  StatisticsStyle,
+  StatisticsTitleStyle,
+  StatiscicsList,
+  StatisticsItem,
+  StatiscicsLabel,
+  StatiscicsPercentage,
+} from './Statistics.styled';
+
 export default function Statistics({ title, stats }) {
   return (
-    <section className="statistics">
-      {title && <StatisticsTitle title={title} />}
-      <StatisticsItems stats={stats} />
-    </section>
+    <StatisticsStyle>
+      <div>
+        {title && <StatisticsTitle title={title} />}
+        <StatisticsItems stats={stats} />
+      </div>
+    </StatisticsStyle>
   );
 }
 
 function StatisticsTitle({ title }) {
-  return <h2 className="title">{title}</h2>;
+  return <StatisticsTitleStyle>{title}</StatisticsTitleStyle>;
 }
 
 function StatisticsItems({ stats }) {
   return (
-    <ul className="stat-list">
+    <StatiscicsList>
       {stats.map(stat => (
-        <li key={stat.id} className="item">
-          <span className="label">{stat.label}</span>
-          <span className="percentage">{stat.percentage}%</span>
-        </li>
+        <StatisticsItem key={stat.id} backgroundColor={getRandomHexColor()}>
+          <StatiscicsLabel>{stat.label}</StatiscicsLabel>
+          <StatiscicsPercentage>{stat.percentage}%</StatiscicsPercentage>
+        </StatisticsItem>
       ))}
-    </ul>
+    </StatiscicsList>
   );
 }
