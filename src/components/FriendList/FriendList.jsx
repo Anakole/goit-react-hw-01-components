@@ -1,13 +1,10 @@
-import {
-  FriendSection,
-  FriendListStyled,
-  FriendItem,
-  FriendStatus,
-} from './Friend.styled';
+import { FriendListStyled, FriendItem, FriendStatus } from './Friend.styled';
+
+import { Section } from 'components/App/App.styled';
 
 export default function FriendList({ friends }) {
   return (
-    <FriendSection>
+    <Section>
       <FriendListStyled>
         {friends.map(friend => (
           <FriendItem key={friend.id}>
@@ -22,6 +19,6 @@ export default function FriendList({ friends }) {
           </FriendItem>
         ))}
       </FriendListStyled>
-    </FriendSection>
+    </Section>
   );
 }
