@@ -1,18 +1,27 @@
+import {
+  FriendSection,
+  FriendListStyled,
+  FriendItem,
+  FriendStatus,
+} from './Friend.styled';
+
 export default function FriendList({ friends }) {
   return (
-    <ul className="friend-list">
-      {friends.map(friend => (
-        <li key={friend.id} className="item">
-          <span className="status">{friend.isOnline}</span>
-          <img
-            className="avatar"
-            src={friend.avatar}
-            alt="User avatar"
-            width="48"
-          />
-          <p className="name">{friend.name}</p>
-        </li>
-      ))}
-    </ul>
+    <FriendSection>
+      <FriendListStyled>
+        {friends.map(friend => (
+          <FriendItem key={friend.id}>
+            <FriendStatus status={friend.isOnline}></FriendStatus>
+            <img
+              className="avatar"
+              src={friend.avatar}
+              alt="User avatar"
+              width="48"
+            />
+            <p className="name">{friend.name}</p>
+          </FriendItem>
+        ))}
+      </FriendListStyled>
+    </FriendSection>
   );
 }
