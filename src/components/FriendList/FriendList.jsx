@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types';
 import { FriendListStyled, FriendItem, FriendStatus } from './Friend.styled';
-
 import { Section } from 'components/App/App.styled';
 
 export default function FriendList({ friends }) {
@@ -22,3 +22,14 @@ export default function FriendList({ friends }) {
     </Section>
   );
 }
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ),
+};
