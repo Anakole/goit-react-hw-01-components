@@ -1,5 +1,4 @@
 import {
-  ProfileStyled,
   ProfileContainer,
   ProfileDescription,
   ProfileAvatar,
@@ -9,6 +8,8 @@ import {
   ProfileLabel,
   ProfileQuantity,
 } from './Profile.styled';
+
+import { Section } from 'components/App/App.styled';
 
 export default function Profile({
   username,
@@ -20,7 +21,7 @@ export default function Profile({
   likes,
 }) {
   return (
-    <ProfileStyled>
+    <Section>
       <ProfileContainer>
         <ProfileDescription>
           <ProfileAvatar src={avatar} alt="User avatar" />
@@ -44,6 +45,6 @@ export default function Profile({
           </li>
         </ProfileStats>
       </ProfileContainer>
-    </ProfileStyled>
+    </Section>
   );
 }
