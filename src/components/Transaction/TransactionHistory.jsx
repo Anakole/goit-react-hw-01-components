@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { TransactionTable } from './Transaction.styled';
 import { Section } from 'components/App/App.styled';
 
