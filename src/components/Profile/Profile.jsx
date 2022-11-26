@@ -1,3 +1,15 @@
+import {
+  ProfileStyled,
+  ProfileContainer,
+  ProfileDescription,
+  ProfileAvatar,
+  ProfileName,
+  ProfileTagLocation,
+  ProfileStats,
+  ProfileLabel,
+  ProfileQuantity,
+} from './Profile.styled';
+
 export default function Profile({
   username,
   tag,
@@ -8,30 +20,30 @@ export default function Profile({
   likes,
 }) {
   return (
-    <div className="profile">
-      <div className="container">
-        <div className="description">
-          <img src={avatar} alt="User avatar" className="avatar" />
-          <p className="name">{username}</p>
-          <p className="tag">@{tag}</p>
-          <p className="location">{location}</p>
-        </div>
+    <ProfileStyled>
+      <ProfileContainer>
+        <ProfileDescription>
+          <ProfileAvatar src={avatar} alt="User avatar" />
+          <ProfileName>{username}</ProfileName>
+          <ProfileTagLocation>@{tag}</ProfileTagLocation>
+          <ProfileTagLocation>{location}</ProfileTagLocation>
+        </ProfileDescription>
 
-        <ul className="stats">
+        <ProfileStats>
           <li>
-            <span className="label">Followers</span>
-            <span className="quantity">{followers}</span>
+            <ProfileLabel>Followers</ProfileLabel>
+            <ProfileQuantity>{followers}</ProfileQuantity>
           </li>
           <li>
-            <span className="label">Views</span>
-            <span className="quantity">{views}</span>
+            <ProfileLabel>Views</ProfileLabel>
+            <ProfileQuantity>{views}</ProfileQuantity>
           </li>
           <li>
-            <span className="label">Likes</span>
-            <span className="quantity">{likes}</span>
+            <ProfileLabel>Likes</ProfileLabel>
+            <ProfileQuantity>{likes}</ProfileQuantity>
           </li>
-        </ul>
-      </div>
-    </div>
+        </ProfileStats>
+      </ProfileContainer>
+    </ProfileStyled>
   );
 }
